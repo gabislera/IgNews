@@ -15,10 +15,10 @@ type User = {
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   if(req.method === 'POST') {
-    const session = await getSession({ req })
-    console.log(session)
+    const session = await getSession({ req }) // Obtem informaçoes do usuário logado com o Github({ name, email, image })
+    // console.log(session)
 
-    const user = await fauna.query<User>( // Executa uma consulta no FaunaDB para obter informações do usuário
+    const user = await fauna.query<User>( // Executa uma consulta no FaunaDB para obter informações do usuário com o email do github(session.user.email)
       q.Get(
         q.Match(
           q.Index('user_by_email'),
@@ -26,7 +26,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         )
       )
     )
-    console.log(user)
+    // console.log(user)
 
     let customerId = user.data.stripe_customer_id // Obtém o ID do cliente do Stripe associado ao usuário
 
