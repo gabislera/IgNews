@@ -31,6 +31,17 @@ interface PostDocumentData {
    */
   content: prismic.RichTextField;
   /**
+   * content2 field in *Post*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: post.content2
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  content2: prismic.KeyTextField;
+  /**
    * Slice Zone field in *Post*
    *
    * - **Field Type**: Slice Zone
