@@ -30,34 +30,7 @@ interface PostDocumentData {
    *
    */
   content: prismic.RichTextField;
-  /**
-   * content2 field in *Post*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: post.content2
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-   *
-   */
-  content2: prismic.KeyTextField;
-  /**
-   * Slice Zone field in *Post*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: post.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/slices
-   *
-   */
-  slices: prismic.SliceZone<PostDocumentDataSlicesSlice>;
 }
-/**
- * Slice for *Post → Slice Zone*
- *
- */
-type PostDocumentDataSlicesSlice = never;
 /**
  * Post document from Prismic
  *
@@ -78,11 +51,6 @@ declare module "@prismicio/client" {
     ): prismicClient.Client<AllDocumentTypes>;
   }
   namespace Content {
-    export type {
-      PostDocumentData,
-      PostDocumentDataSlicesSlice,
-      PostDocument,
-      AllDocumentTypes,
-    };
+    export type { PostDocumentData, PostDocument, AllDocumentTypes };
   }
 }
