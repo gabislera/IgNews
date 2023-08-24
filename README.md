@@ -3,7 +3,7 @@
 
 ## IgNews
 
-A blog where you can see preview posts and subscribe to see full posts. You can sign in with github and pay with stripe api.
+'A blog where you can see preview posts and subscribe to see full posts. You can sign in with github and pay with stripe api.'
 
 
 ## Functionalities
